@@ -1,0 +1,18 @@
+- ec2:
+    key_name: containers
+    group: demo
+    instance_type: t2.micro
+    image:  ami-9e2f0988
+    wait: yes
+    wait_timeout: 500
+    volumes:
+      - device_name: /dev/sdb
+        snapshot: snap-abcdef12
+        volume_type: io1
+        iops: 1000
+        volume_size: 50
+        delete_on_termination: true
+    monitoring: yes
+    vpc_subnet_id: subnet-ea512b8f
+    assign_public_ip: yes
+	
